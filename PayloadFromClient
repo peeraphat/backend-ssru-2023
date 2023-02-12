@@ -1,0 +1,22 @@
+req = เก็บค่าที่ Client request มาหา API
+res = คือ function ในการ response ส่งกลับไปให้ Client
+
+(req, res) => {} 
+
+รับค่าจากที่ต่างของ Request
+
+1. รับจาก body ที่แนบมากับ http request
+  (req, res) => {
+    req.body -- [value] --> { key1: 'value1', key2: 'value2' }
+  } 
+  
+2. รับจาก url ที่แนบมากับ URL 
+  ex. (localhost/user/:userId) localhost/user/12345 -> 12345 คือค่าของตัวแปรที่ตั้งไว้
+  (req, res) => {
+    req.params -- [value] --> { userId: 'valueOfUserId' }
+  }
+
+3. รับจาก query string แนบมากับ URL ex. localhost/user?var1=value1&var2=value2
+  (req, res) => {
+    req.query -- [value] --> { var1: 'value1', var2: 'value2'}
+  }
